@@ -1,0 +1,18 @@
+%head
+  :css
+    #content{
+    	position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 300px;
+        width: 70%;
+    	}
+%body
+  #content{:style => "text-align:center"}
+    %h1 Welcome to the xxx Blog
+    %h2
+      This is the home page for the sample application.
+    = link_to 'Enter>>', controller: 'articles'
