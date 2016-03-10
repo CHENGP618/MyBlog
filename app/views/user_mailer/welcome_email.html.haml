@@ -1,9 +1,16 @@
 
 %head
   %body
-    %h1 Welcome to example.com, =@user.name
-    %p  You have successfully signed up to example.com,
-        your username is: =@user.login .
-    %p  To login to the site, just follow this link: =@url .
+    %h1
+      Welcome to example.com,
+      = @user.name
+    %p
+      You have successfully signed up to example.com,
+      your username is:
+      = @user.login
+      \.
+    %p
+      To login to the site, just follow this link:
+      = @url
 
-    %p  Thanks for joining and have a great day!w
+    %p Thanks for joining and have a great day!w
