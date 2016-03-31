@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  
+
   resources :users
   resources :articles do
     resources :comments
+    get :autocomplete_article_title, on: :collection
   end
-  
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

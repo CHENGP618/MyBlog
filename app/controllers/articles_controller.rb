@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
   http_basic_authenticate_with name: '123', password: '123', except: [:index, :show]
+
+  autocomplete :article, :title, :full => true
+  
   def new
     @article = Article.new
   end
