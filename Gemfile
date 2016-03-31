@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development do
-   gem 'sqlite3'
+  gem 'mysql2', '~> 0.3.8'
 end
 
 group :test, :production do
