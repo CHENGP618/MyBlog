@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.search(params[:search])
   end
 
   def edit
