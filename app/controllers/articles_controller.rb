@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render 'edit'
-      end
+    end
   end
 
   def destroy
@@ -41,6 +41,16 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to articles_path
+  end
+
+  def suggestion
+    @suggestion = Article.suggestion(params[:query]).select(:title, :id)
+    suggestions = @suggestion.to_a.map do |suggestion|
+      { data: "#{suggestion.id}", value: suggestion.title }
+    end
+
+    render :json => {"query": params[:query],
+        "suggestions": suggestions}
   end
 
   private
