@@ -10,4 +10,9 @@ class Article < ActiveRecord::Base
       all
     end
   end
+
+  def self.suggestion(indice)
+    where(['title LIKE ?', "%#{indice}%"])
+  end
+
 end

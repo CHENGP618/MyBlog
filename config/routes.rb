@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  
+
   resources :users
   resources :articles do
+    get 'suggestion', on: :collection
     resources :comments
   end
-  
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

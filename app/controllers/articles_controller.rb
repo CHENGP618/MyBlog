@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: '123', password: '123', except: [:index, :show]
+  http_basic_authenticate_with name: '123', password: '123', except: [:index, :show, :suggestion]
   def new
     @article = Article.new
   end
@@ -41,6 +41,11 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to articles_path
+  end
+
+  def suggestion
+    @suggestion = Article.suggestion(params[:query]).select(:title, :id)
+    render :json => { "suggestions": @suggestion }
   end
 
   private
